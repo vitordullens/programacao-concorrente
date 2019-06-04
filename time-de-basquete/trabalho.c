@@ -1,6 +1,6 @@
 /*
     Aluno: Vitor Fernandes Dullens
-    Matricula: 16/1048260
+    Matricula: 16/0148260
     Compilação: gcc -pthread -o exec trabalho.c
 */
 
@@ -161,9 +161,9 @@ void * Jogador (void * data){
         sleep(2 + rand()%5); // tempo do jogador jogar
 
         pthread_mutex_lock(&lock);
-        print_dados();
         em_quadra--;
         jogador_descanso++;
+        print_dados();
         printf(RED "Jogador %d: Cansei - Vou descansar\n" RESET, id);
         pthread_cond_signal(&juiz_cond); 
 
